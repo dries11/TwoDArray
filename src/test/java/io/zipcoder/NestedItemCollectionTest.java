@@ -29,4 +29,11 @@ public class NestedItemCollectionTest {
         Integer actual = itemActual.getPrimeNumberCount();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void sortByNumberofPrimesTEST(){
+        NestedItem expectedOrder = new NestedItem(new Integer[] {4,3,2,1});
+        NestedItem actualOrder = collection.getAtIndex(0);
+        assertEquals("We expect to get the correct order of the array",expectedOrder.toString(),actualOrder.toString());
+    }
 }
