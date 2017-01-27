@@ -37,9 +37,10 @@ public class NestedItemCollectionTest {
         assertEquals("We expect to get the correct order of the array",expectedOrder.toString(),actualOrder.toString());
     }
 
-    @Test
-    public void checkforOddTEST(){
-        int expected = 0;
-        int actual = collection.checkforOdd();
-    }
+//    @Test
+//    public void checkforOddTEST(){
+//       NestedItem expectedOrder = {{1,2,5,3,4,5},{4,3,2,1}};
+//       NestedItem actualOrder = collection.getAtIndex(0);
+//
+//    }
 }

@@ -53,19 +53,35 @@ public class NestedItemCollection {
                     nestedItems[i] = temp[i];
                 }
                 if (nestedItems[i].getPrimeNumberCount() == nestedItems[j].getPrimeNumberCount()){
-
+                    checkForOdd(i);
                 }
             }
         }
     }
 
-    public int checkforOdd(Integer[] integerArray) {
-        int hold = 0;
-        for (int i = 0; i < integerArray.length; i++) {
-            int element = i;
-            hold = (integerArray[i] + 2) % 2;
-        }
-        return hold;
+    public void checkForOdd(int index) {
+        Integer[] tempOne = nestedItems[index].getArrayOfInts();
+        Integer[] tempTwo = nestedItems[index + 1].getArrayOfInts();
+        NestedItem tempForSwap;
+        for (int i = 0; i < tempOne.length; i++)
+            if ((tempOne[i]+2)%2 == 0 && (tempTwo[i]+2)%2 != 0){
+                tempForSwap = nestedItems[index];
+                nestedItems[index] = nestedItems[index +1];
+                nestedItems[i] = tempForSwap;
+            }
+            else if ((tempOne[i]+2)%2 == 0 && (tempTwo[i]+2)%2 == 0){
+                if (tempOne[i] < tempTwo[i]){
+                    tempForSwap = nestedItems[index];
+                    nestedItems[index] = nestedItems[index +1];
+                    nestedItems[index + 1] = tempForSwap;
+                }
+                else{
+                    tempForSwap = nestedItems[index +1];
+                    nestedItems[index + 1] = nestedItems[index];
+                    nestedItems[index] = tempForSwap;
+                }
+            }
+
     }
 }
 
