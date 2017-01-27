@@ -59,9 +59,13 @@ public class NestedItemCollection {
         }
     }
 
-    public void checkforOdd(NestedItem[] one, NestedItem[] two){
-       // for (element: one) {
-
+    public int checkforOdd(Integer[] integerArray) {
+        int hold = 0;
+        for (int i = 0; i < integerArray.length; i++) {
+            int element = i;
+            hold = (integerArray[i] + 2) % 2;
         }
+        return hold;
     }
-//}
+}
+
